@@ -1,0 +1,21 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
+import time
+
+
+Client = discord.Client()
+client = commands.Bot(command_prefix = ".")
+
+
+@client.event
+async def on_ready():
+    print("Bot is online and connected to Discord")
+
+@client.event
+async def on_message(message):
+    if message.content == "bork":
+        await client.send_message(message.channel, ":***B o r k***:")
+
+client.run("NTE1MDAyMjk5MjU3NzE2NzQ2.Dti9Rg.GDhzPcYjwlhllm6CX1sJXNxvUR4")
